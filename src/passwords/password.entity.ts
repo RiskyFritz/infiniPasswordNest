@@ -11,10 +11,10 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class Credential {
+export class Password {
 	@PrimaryGeneratedColumn('uuid')
 	id: string;
-	@ManyToOne((_type) => User, (user) => user.credentials, { eager: false })
+	@ManyToOne((_type) => User, (user) => user.passwords, { eager: false })
 	user: string;
 	@Column()
 	username: string;
@@ -34,7 +34,7 @@ export class Credential {
 	createdOn: Date;
 	@UpdateDateColumn({ type: 'timestamptz' })
 	lastUpdatedOn: Date;
-	@ManyToMany((_type) => Group, (group) => group.credentials, {
+	@ManyToMany((_type) => Group, (group) => group.passwords, {
 		eager: false,
 	})
 	groups: Group[];

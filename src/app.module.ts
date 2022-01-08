@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { CredentialsModule } from './credentials/credentials.module';
+import { PasswordsModule } from './passwords/password.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { SecureNotesModule } from './secureNotes/secureNotes.module';
@@ -13,7 +13,7 @@ import { TrustedAccountsModule } from './trustedAccounts/trustedAccounts.module'
 @Module({
 	imports: [
 		AuthModule,
-		CredentialsModule,
+		PasswordsModule,
 		SecureNotesModule,
 		PaymentMethodsModule,
 		BanksModule,

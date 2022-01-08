@@ -1,9 +1,13 @@
 import { IsOptional, IsString } from 'class-validator';
 
-export class GetCredentialsFilterDto {
+export class GetPasswordsFilterDto {
 	@IsOptional()
 	@IsString()
 	username?: string;
+
+	@IsOptional()
+	@IsString()
+	groups?: string;
 
 	@IsOptional()
 	@IsString()

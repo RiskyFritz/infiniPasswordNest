@@ -1,5 +1,5 @@
 import { User } from 'src/auth/user.entity';
-import { Credential } from 'src/credentials/credential.entity';
+import { Password } from 'src/passwords/password.entity';
 import { TrustedAccount } from 'src/trustedAccounts/trustedAccount.entity';
 import {
 	Column,
@@ -23,8 +23,8 @@ export class Group {
 		{ eager: false },
 	)
 	trustedAccounts: string[];
-	@ManyToMany((_type) => Credential, (credential) => credential.groups, {
+	@ManyToMany((_type) => Password, (password) => password.groups, {
 		eager: false,
 	})
-	credentials: string[];
+	passwords: string[];
 }

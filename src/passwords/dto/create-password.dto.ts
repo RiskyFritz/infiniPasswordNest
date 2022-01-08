@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsOptional } from 'class-validator';
 
-export class CreateCredentialDto {
+export class CreatePasswordDto {
 	@IsNotEmpty()
 	user: string;
 
@@ -26,5 +26,5 @@ export class CreateCredentialDto {
 	notes: string;
 
 	@IsOptional()
-	sharedWith: string;
+	groups: string;
 }

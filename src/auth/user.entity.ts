@@ -1,6 +1,6 @@
 import { Address } from 'src/addresses/address.entity';
 import { Bank } from 'src/banks/bank.entity';
-import { Credential } from 'src/credentials/credential.entity';
+import { Password } from 'src/passwords/password.entity';
 import { Folder } from 'src/folders/folder.entity';
 import { Group } from 'src/groups/group.entity';
 import { PaymentMethod } from 'src/paymentMethods/paymentMethod.entity';
@@ -19,10 +19,10 @@ export class User {
 	@Column()
 	password: string;
 
-	@OneToMany((_type) => Credential, (credential) => credential.user, {
+	@OneToMany((_type) => Password, (password) => password.user, {
 		eager: true,
 	})
-	credentials: Credential[];
+	passwords: Password[];
 
 	@OneToMany((_type) => Folder, (folder) => folder.user, {
 		eager: true,
