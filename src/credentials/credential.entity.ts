@@ -1,8 +1,10 @@
 import { User } from 'src/auth/user.entity';
+import { Group } from 'src/groups/group.entity';
 import {
 	Column,
 	CreateDateColumn,
 	Entity,
+	ManyToMany,
 	ManyToOne,
 	PrimaryGeneratedColumn,
 	UpdateDateColumn,
@@ -32,4 +34,8 @@ export class Credential {
 	createdOn: Date;
 	@UpdateDateColumn({ type: 'timestamptz' })
 	lastUpdatedOn: Date;
+	@ManyToMany((_type) => Group, (group) => group.credentials, {
+		eager: false,
+	})
+	groups: Group[];
 }
